@@ -1,0 +1,13 @@
+{
+  "name": "com.avmedvedskiy.additionalatlasviewer",
+  "displayName": "Additional Atlas Viewer",
+  "version": "1.0.5",
+  "unity": "2018.4",
+  "author": "avmedvedskiy",
+  "description": "Additional Atlas Viewer",
+  "keywords": [
+    "atlas"
+  ],
+  "dependencies": {
+  }
+}
