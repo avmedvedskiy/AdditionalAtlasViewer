@@ -39,7 +39,7 @@ namespace SpriteImporterAtlasGUI
                         GUI.color = Color.red;
 
                     EditorGUILayout.ObjectField("Atlas", atlas, typeof(SpriteAtlas),false);
-
+                    GUI.color = Color.white;
                     GUI.enabled = true;
                 }
             }
