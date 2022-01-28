@@ -7,6 +7,7 @@
  
  #### Install via git URL
 ![image](https://user-images.githubusercontent.com/17832838/151571158-9ccc0233-5e02-41e4-8cb0-8d6be24c7107.png)
+
 `https://github.com/avmedvedskiy/AdditionalAtlasViewer`
 
 from the `Add package from git URL` option.
