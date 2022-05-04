@@ -25,24 +25,23 @@ namespace SpriteImporterAtlasGUI
 
         private static void OnPostHeaderGUI(Editor editor)
         {
-            foreach (var e in editor.targets)
+            var e = editor.target;
+            if(e is TextureImporter textureImporter && textureImporter.textureType == TextureImporterType.Sprite)
             {
-                if(e is TextureImporter textureImporter && textureImporter.textureType == TextureImporterType.Sprite)
-                {
-                    //Draw readonly editor
-                    EditorGUILayout.Space(10f);
-                    GUI.enabled = false;
+                //Draw readonly editor
+                EditorGUILayout.Space(10f);
+                GUI.enabled = false;
 
-                    Sprite sprite = AssetDatabase.LoadAssetAtPath(textureImporter.assetPath, typeof(Sprite)) as Sprite;
-                    SpriteAtlas atlas = GetSpriteAtlas(sprite);
-                    if(atlas == null)
-                        GUI.color = Color.red;
+                Sprite sprite = AssetDatabase.LoadAssetAtPath(textureImporter.assetPath, typeof(Sprite)) as Sprite;
+                SpriteAtlas atlas = GetSpriteAtlas(sprite);
+                if(atlas == null)
+                    GUI.color = Color.red;
 
-                    EditorGUILayout.ObjectField("Atlas", atlas, typeof(SpriteAtlas),false);
-                    GUI.color = Color.white;
-                    GUI.enabled = true;
-                }
+                EditorGUILayout.ObjectField("Atlas", atlas, typeof(SpriteAtlas),false);
+                GUI.color = Color.white;
+                GUI.enabled = true;
             }
+            
         }
 
         private static void CacheAllAtlases()
