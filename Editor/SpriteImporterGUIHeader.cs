@@ -56,6 +56,9 @@ namespace SpriteImporterAtlasGUI
         {
             if (_cachedAtlases.Count == 0)
                 CacheAllAtlases();
+            
+            if (sprite == null)
+                return null;
 
             foreach (var atlas in _cachedAtlases)
             {
