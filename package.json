@@ -1,7 +1,7 @@
 {
   "name": "com.avmedvedskiy.additionalatlasviewer",
   "displayName": "Editor.AdditionalAtlasViewer",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "unity": "2018.4",
   "author": "avmedvedskiy",
   "description": "Additional Atlas Viewer",
