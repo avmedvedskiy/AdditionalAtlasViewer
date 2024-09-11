@@ -18,13 +18,31 @@ namespace SpriteImporterAtlasGUI
                 {
                     var path = AssetDatabase.GetAssetPath(sprite);
                     var textureImporter =(TextureImporter)AssetImporter.GetAtPath(path);
-                    if (textureImporter.textureCompression != TextureImporterCompression.Uncompressed)
+                    var settings = textureImporter.GetDefaultPlatformTextureSettings();
+                    //if (settings.format != TextureImporterFormat.RGBA32)
                     {
-                        textureImporter.textureCompression = TextureImporterCompression.Uncompressed;
+                        settings.format = TextureImporterFormat.RGBA32;
+                        textureImporter.SetPlatformTextureSettings(settings);
+                        //SetUnCompressed(textureImporter, "Standalone");
+                        //SetUnCompressed(textureImporter, "Web");
+                        //SetUnCompressed(textureImporter, "iPhone");
+                        //SetUnCompressed(textureImporter, "Android");
+                        //SetUnCompressed(textureImporter, "WebGL");
                         Debug.Log($"Sprite {sprite.name} set Uncompressed",sprite);
+                        EditorUtility.SetDirty(textureImporter);
                     }
                 }
             }
         }
+
+        /*
+        static void SetUnCompressed(TextureImporter textureImporter, string platform)
+        {
+            var settings = textureImporter.GetPlatformTextureSettings(platform);
+            settings.format = TextureImporterFormat.RGBA32;
+            settings.overridden = true;
+            textureImporter.SetPlatformTextureSettings(settings);
+        }
+        */
     }
 }
